@@ -60,7 +60,7 @@ auth.post("/auth/login", async(req: Request, res: Response) => {
             httpOnly: true,
             secure: process.env.NODE_ENV === "production" ? true : false,
             sameSite: "none",
-            maxAge: 15 * 60 * 1000
+            maxAge: 3 * 60 * 60 * 1000
         })
 
         res.cookie("refreshToken", user?.data.tokens.refreshToken, {
