@@ -1,31 +1,114 @@
-# MediSense API  
-MediSense adalah API kesehatan berbasis teknologi yang memungkinkan pengguna untuk menganalisis gejala, memberikan rekomendasi obat, dan menyediakan berbagai layanan terkait kesehatan. Dibangun dengan stack modern untuk memastikan keamanan, skalabilitas, dan kemudahan integrasi.
+# Medisense API
+
+The Medisense API is a platform designed to provide intelligent solutions in the healthcare field. This API is built using modern technologies such as **Express.js** with **TypeScript**, **MongoDB** as the database, **Prisma** as the ORM, **Zod** for data validation, and **OAuth** for secure authentication.
+
+## Technologies Used
+
+- **Express.js (TypeScript)**: A backend framework for building fast and efficient APIs.
+- **MongoDB**: A NoSQL database for storing healthcare data.
+- **Prisma**: An ORM that simplifies interactions with MongoDB.
+- **Zod**: A schema validation library to ensure API inputs meet expected criteria.
+- **OAuth**: A secure authentication system to protect user data.
 
 ---
 
-## 🚀 Fitur Utama  
-- **Analisis Gejala (Symptom Analysis):** Identifikasi kemungkinan diagnosis berdasarkan gejala yang dimasukkan.  
-- **Rekomendasi Obat (Medication Recommendation):** Saran obat berdasarkan diagnosis.  
-- **Interaksi Obat (Drug Interaction Checker):** Periksa interaksi obat yang mungkin berbahaya.  
-- **Pencarian Penyakit (Disease Lookup):** Informasi lengkap tentang penyakit.  
-- **Penjadwalan Konsultasi:** Integrasi untuk menjadwalkan konsultasi dokter.  
-- **Edukasi Kesehatan:** Artikel dan panduan terkait kesehatan.  
-- **Autentikasi Aman:** Menggunakan OAuth2 dan JWT untuk manajemen pengguna.  
+## Key Features
+
+### 1. **Symptom Analysis**  
+Users can input symptoms they are experiencing, such as:
+- Fever
+- Cough
+- Pain  
+
+**Process**:
+- The API analyzes the symptoms using data available in the database.
+- Provides possible diagnoses based on the symptom analysis.
+
+**Output**:
+- A list of possible related illnesses.
+- Diagnosis accuracy level.
 
 ---
 
-## 🛠️ Teknologi yang Digunakan  
-- **Backend Framework:** Express dengan TypeScript.  
-- **Validasi Data:** Zod.  
-- **Database:** MongoDB dengan Prisma ORM.  
-- **Autentikasi:** OAuth2 dan JWT untuk keamanan.  
-- **Deployment:** Siap untuk di-deploy ke platform seperti Docker, AWS, atau Vercel.
+### 2. **Medication Recommendation**  
+Offers medication recommendations based on symptoms or diagnoses.
+
+**Details**:
+- The name of the recommended medication.
+- Usage dosage.
+- Side effects to watch out for.
+- Drug contraindications.
 
 ---
 
-## 📦 Instalasi  
+### 3. **Disease Lookup**  
+Allows users to search for information about specific diseases.
 
-### 1. Clone Repositori  
-```bash
-git clone https://github.com/denisetiya/medisense-api.git
-cd medisense-api
+**Information Provided**:
+- **Common Symptoms**: Frequently occurring symptoms.
+- **Causes**: Primary factors causing the disease.
+- **Treatment**: Available treatment recommendations.
+- **Prevention**: Steps to avoid the disease.
+
+---
+
+### 4. **Drug Interaction Checker**  
+Detects harmful interactions between medications entered by the user.
+
+**Process**:
+- The API processes the list of medications provided by the user.
+- Issues warnings if dangerous combinations are detected.
+
+**Output**:
+- Risk level information.
+- Explanation of why the interaction is harmful.
+
+---
+
+## Development Plan  
+-- **Coming soon**
+
+---
+
+## How to Use
+
+### Installation
+1. Clone this repository:  
+   ```bash
+   git clone https://github.com/username/medisense-api.git
+   cd medisense-api
+   ```
+
+2. Install dependencies:  
+   ```bash
+   npm install
+   ```
+
+3. Configure the `.env` file:  
+   Create a `.env` file in the project root and add the following configuration:
+   ```
+   DATABASE_URL=mongodb+srv://<username>:<password>@cluster.mongodb.net/medisense
+   JWT_SECRET=<your_jwt_secret>
+   OAUTH_CLIENT_ID=<your_oauth_client_id>
+   OAUTH_CLIENT_SECRET=<your_oauth_client_secret>
+   ```
+
+4. Start the server:  
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## Contribution  
+Contributions are welcome!  
+1. Fork this repository.  
+2. Create a new branch: `feature/feature-name`.  
+3. Submit a pull request to the main branch.
+
+---
+
+## License  
+This project is licensed under the **MIT License**. See the `LICENSE` file for details.  
+
+Would you like to add anything else? 😊
