@@ -1,13 +1,13 @@
 import isError from "../../utils/handle.error";
-import { iSymptom } from "../../types/symptom";
+import { iDrug } from "../../types/drug";
 import Groq from "groq-sdk";
 
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 
 
-export default class SymptomService {
-    static async getAnalytics(data:iSymptom) {
+export default class DrugService {
+    static async drugInteractions(data:iDrug) {
 
       try {
 
@@ -15,12 +15,12 @@ export default class SymptomService {
           messages: [
             {
               role: "system",
-              content: `Give 3 diagnosis from symptom *${data.description}* with medical history *${data.history}* closest to ICD-10 code and disease name in JSON format. The output format must be an array of objects with 'code' and 'name' without any other words"`,
+              content: `From the list of drugs I provided ${Object.entries(data).filter(([key, value]) => key.startsWith('drug') && value !== undefined && value !== null).map(([_, value]) => value).join(', ')}, is there any dangerous interaction between the drugs if consumed together? Output in JSON format which contains an array of objects with 'interaction', 'impact', 'dangerous(true/false)', without any other words.`,
             },
           ],
           model: "llama-3.3-70b-versatile",
           temperature : 0.5, 
-          max_tokens :100,  
+          max_tokens :2000,  
           response_format :{"type": "json_object"},
         });
 

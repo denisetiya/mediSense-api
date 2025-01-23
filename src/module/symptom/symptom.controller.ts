@@ -19,9 +19,11 @@ symptom.post("/symptom", async(req: Request, res: Response) => {
         const result = await SymptomService.getAnalytics(data);
         return response(res, 200, "Success", null, result,
             data.history? {
-                tips : "you can find drug recommendation in /disease/drug"
+                tips : "you can find drug recommendation in /disease/drug",
+                information : "code response is ICD-10 code"
             } : {
                 tips : "you can find drug recommendation in /disease/drug",
+                information : "code response is ICD-10 code",
                 guide : "if you want more accurate answer, please add medical history in field history"
             } 
          );

@@ -42,7 +42,7 @@ disease.get('/disease/lookup/:name', async(req : Request, res : Response) => {
         const result = await DiseaseService.getDiseaseInformation(name)
         return response(res,200, "Success", null, result,
             {
-                tips : "Always remember, a healthy life is the best way to prevent any diseases, keep your body healthy by doing regular exercise, eating healthy food, and getting enough rest"
+                information : "Always remember, a healthy life is the best way to prevent any diseases, keep your body healthy by doing regular exercise, eating healthy food, and getting enough rest"
             }
         )
     } catch (error) {
