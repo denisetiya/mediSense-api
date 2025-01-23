@@ -70,33 +70,6 @@ Detects harmful interactions between medications entered by the user.
 
 ---
 
-## How to Use
-
-### Installation
-1. Clone this repository:  
-   ```bash
-   git clone https://github.com/username/medisense-api.git
-   cd medisense-api
-   ```
-
-2. Install dependencies:  
-   ```bash
-   npm install
-   ```
-
-3. Configure the `.env` file:  
-   Create a `.env` file in the project root and add the following configuration:
-   ```
-   DATABASE_URL=mongodb+srv://<username>:<password>@cluster.mongodb.net/medisense
-   JWT_SECRET=<your_jwt_secret>
-   OAUTH_CLIENT_ID=<your_oauth_client_id>
-   OAUTH_CLIENT_SECRET=<your_oauth_client_secret>
-   ```
-
-4. Start the server:  
-   ```bash
-   npm run dev
-   ```
 
 ---
 
